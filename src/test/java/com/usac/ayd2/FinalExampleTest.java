@@ -4,10 +4,15 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 public class FinalExampleTest {
     private static final String INPUT_DATA = "hola,mundo,java";
+
     private static final String USER_NAME = "Manuel";
     private static final String USER_EMAIL = "manuel@test.com";
     
@@ -30,6 +35,15 @@ public class FinalExampleTest {
     void processDataShouldPrintResult() {
         FinalExample finalExample = new FinalExample();
         finalExample.processData(INPUT_DATA);
+    }
+
+    @Test
+    void processDataShouldReturnListData() {
+        FinalExample finalExample = new FinalExample();
+        List<String> dataExpectedResult = new ArrayList<>();
+        List<String> dataProcessed = finalExample.processData(INPUT_DATA);
+        
+        
     }
 
     @Test

@@ -1,11 +1,11 @@
 package com.usac.ayd2;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FinalExample {
     
-    public void processData(String input) {
+    public List<String> processData(String input) {
         List<String> data = new ArrayList<>();
         String[] parts = input.split(",");
         for (String part : parts) {
@@ -20,16 +20,23 @@ public class FinalExample {
             }
         }
         
-        System.out.println("Data processed:");
-        for (String item : data) {
-            System.out.println("- " + item);
-        }
-        
-        System.out.println("Total items:");
-        for (String item : data) {
-            System.out.println("- " + item);
-        }
+        return data;
     }
+
+    public boolean validateTextNotBlank(String field){
+        if (field == null || field.isBlank()) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validateEmail(String email){
+        if (validateTextNotBlank(email) || !email.contains("@")) {
+            return false;
+        }
+        return true;
+    }
+
     
     public String createUser(String name, String email, String phone, 
                             String address, String city, String zip) {
